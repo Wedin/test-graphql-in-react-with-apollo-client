@@ -1,8 +1,8 @@
 import React from "react";
 import ApolloClient from "apollo-boost";
-import gql from "graphql-tag";
-import "./App.css";
-import { ApolloProvider, ApolloConsumer } from "react-apollo";
+import { ApolloProvider } from "react-apollo";
+// import { ApolloConsumer } from "react-apollo";
+import RecipesList from "./components/RecipesList";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000",
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <ApolloProvider client={client}>
-        <ApolloConsumer>
+        {/* <ApolloConsumer>
           {client => {
             client
               .query({
@@ -28,7 +28,8 @@ function App() {
               .then(res => console.log(res));
             return null;
           }}
-        </ApolloConsumer>
+        </ApolloConsumer> */}
+        <RecipesList />
       </ApolloProvider>
     </div>
   );
