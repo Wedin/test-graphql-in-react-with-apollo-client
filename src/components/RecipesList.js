@@ -35,6 +35,7 @@ const RecipesList = ({ recipes }) => {
                 return (
                   <button
                     type="button"
+                    className="button-reset"
                     onClick={() => {
                       updateRecipeStarred({
                         variables: {
@@ -73,8 +74,8 @@ export default () => {
         <input type="checkbox" checked={vegetarianOnly} onChange={event => setVegetarianOnly(event.target.checked)} />
       </label>
 
-      <Query query={recipesQuery} variables={{ vegetarian: vegetarianOnly }}>
-        {({ data, loading, error }) => {
+      <Query query={recipesQuery} variables={{ vegetarian: vegetarianOnly }} pollInterval={3000}>
+        {({ data, loading, error, refetch }) => {
           if (loading) {
             return <p>Loading...</p>;
           }
@@ -82,7 +83,14 @@ export default () => {
             console.log("error: ", error);
             return <p>Something went wrong</p>;
           }
-          return <RecipesList recipes={data.recipes} />;
+          return (
+            <>
+              <RecipesList recipes={data.recipes} />
+              <button type="button" onClick={() => refetch()}>
+                Refetch Recipes
+              </button>
+            </>
+          );
         }}
       </Query>
     </>
