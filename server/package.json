@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=development nodemon server.js",
+    "start:slow": "NODE_ENV=development nodemon server.js 1400",
+    "seed": "NODE_ENV=development node models/seed.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.8.1",
+    "graphql": "^14.4.2",
+    "nedb-promise": "^2.0.1",
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "nodemonConfig": {
+    "ignore": ["test/*", "tmp/*"],
+    "delay": "2500"
+  }
+}
