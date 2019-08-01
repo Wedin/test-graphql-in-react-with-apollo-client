@@ -1,5 +1,3 @@
-From egghead course:
-https://egghead.io/courses/graphql-data-in-react-with-apollo-client
+# Egghead course
 
-Files:
-https://github.com/rtancman/egghead-react-graphql-apollo-client-course
+https://egghead.io/courses/graphql-data-in-react-with-apollo-client
