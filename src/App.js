@@ -3,6 +3,7 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 // import { ApolloConsumer } from "react-apollo";
 import RecipesList from "./components/RecipesList";
+import AddRecipe from "./components/AddRecipe";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000",
@@ -29,6 +30,7 @@ function App() {
             return null;
           }}
         </ApolloConsumer> */}
+        <AddRecipe />
         <RecipesList />
       </ApolloProvider>
     </div>
