@@ -39,9 +39,9 @@ const server = new ApolloServer({
   resolvers,
   playground: {
     settings: {
-      'editor.cursorShape': 'line'
-    }
-  }
+      "editor.cursorShape": "line",
+    },
+  },
 });
 
 server.listen().then(({ url }) => {

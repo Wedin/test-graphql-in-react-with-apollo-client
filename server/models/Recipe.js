@@ -11,12 +11,13 @@ const { addId, addIds } = require("./utils");
  * @returns {Promise<[Recipe]>}
  */
 const getRecipes = async ({ vegetarian, ingredient }) => {
-  // Construct the filters
   let filters = {};
-  if (vegetarian === true) filters.vegetarian = true;
+  if (vegetarian === true) {
+    filters.vegetarian = true;
+  }
   if (ingredient) {
     filters.ingredients = {
-      $elemMatch: ingredient
+      $elemMatch: ingredient,
     };
   }
   const recipes = await recipeDb.find(filters);
